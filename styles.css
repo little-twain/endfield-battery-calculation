@@ -1,0 +1,318 @@
+:root {
+  color-scheme: light;
+  --bg: #f4f4f4;
+  --bg-deep: #e2e6ea;
+  --panel: rgba(255, 255, 255, 0.82);
+  --panel-border: rgba(97, 110, 120, 0.25);
+  --accent: #4f6b78;
+  --accent-strong: #29424f;
+  --muted: #6f7b84;
+  --shadow: 0 20px 60px rgba(37, 44, 49, 0.12);
+  --grid-size: 102.4px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", "Noto Sans SC", "PingFang SC", sans-serif;
+  color: #1f2a32;
+  background-color: var(--bg);
+  background-image: linear-gradient(135deg, rgba(40, 50, 58, 0.12), transparent 65%);
+  background-size: 100% 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#grid-pattern {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+
+#particles {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.app {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 32px;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.hero-title h1 {
+  font-family: "Chakra Petch", "Noto Sans SC", sans-serif;
+  font-size: clamp(28px, 3vw, 42px);
+  margin: 6px 0 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.hero-title p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.hero-kicker {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid rgba(41, 66, 79, 0.4);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-strong);
+}
+
+.hero-status {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(140px, 1fr));
+}
+
+.status-card {
+  display: block;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--panel-border);
+  padding: 12px 14px;
+  box-shadow: var(--shadow);
+}
+
+.status-label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.status-value {
+  font-weight: 600;
+  color: var(--accent-strong);
+}
+
+.status-card--link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2b3338;
+  border-color: rgba(255, 255, 255, 0.16);
+  text-decoration: none;
+  color: #f7f7f7;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+}
+
+.status-card--link .status-value {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #f7f7f7;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.status-card--link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(26, 32, 36, 0.35);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.status-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.github-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(6px);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-family: "Chakra Petch", "Noto Sans SC", sans-serif;
+  color: var(--accent-strong);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.form {
+  display: grid;
+  gap: 20px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.7fr);
+  align-items: start;
+}
+
+.form-fields {
+  display: grid;
+  gap: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.field input,
+.field select {
+  padding: 12px 14px;
+  border-radius: 4px;
+  border: 1px solid rgba(79, 107, 120, 0.3);
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+  color: #1f2a32;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(79, 107, 120, 0.2);
+}
+
+.preset-panel {
+  border: 1px solid rgba(79, 107, 120, 0.25);
+  padding: 16px;
+  background: rgba(246, 248, 249, 0.8);
+}
+
+.preset-panel h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.preset-hint {
+  margin: 12px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+button {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 4px;
+  font-family: "Chakra Petch", "Noto Sans SC", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+button[type="submit"] {
+  background: linear-gradient(135deg, #5a7785, #3b5561);
+  color: #f2f4f6;
+  box-shadow: 0 10px 20px rgba(54, 73, 83, 0.35);
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-1px);
+}
+
+button#reset {
+  background: rgba(225, 229, 232, 0.8);
+  border: 1px solid rgba(79, 107, 120, 0.35);
+  color: var(--accent-strong);
+}
+
+.result {
+  border: 1px dashed rgba(79, 107, 120, 0.35);
+  background: rgba(255, 255, 255, 0.7);
+  padding: 16px;
+  min-height: 320px;
+}
+
+.result pre {
+  margin: 0;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-size: 13px;
+  white-space: pre-wrap;
+  color: #1c242b;
+}
+
+.warnings {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #7c4b20;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  margin-top: 24px;
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 720px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-status {
+    width: 100%;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
