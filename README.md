@@ -2,6 +2,8 @@
 
 这是一个用于 **明日方舟终末地** 基建电池分流的最优解计算器。在给定电池功率值、持续时间、目标功率、电池输入速率与最大分流器数量约束下，输出可达到目标功率的最优分流结构。
 
+[![电池分流计算器](https://img.shields.io/badge/电池分流计算器-2b3338?style=for-the-badge&logo=googlechrome&logoColor=white)](https://endfield.nalulu.moe/battery/)
+
 ## 如何使用
 
 具体摆放见计算结果中的连接方式，每个分流器有一个输入口和三个输出口，按结果指示进行连接。
